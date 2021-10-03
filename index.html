@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Travel Record</title>
+	<link rel="stylesheet" href="https://use.typekit.net/gui0kvn.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Trocchi&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap" rel="stylesheet">
+	<style>
+		*{margin:0;}
+		.adress{font-family: 'Trocchi', serif;}
+		.title{padding-top:10vh; background-image:url(./title.png); background-size: auto 100%; background-repeat: no-repeat; background-position: center;}
+		img{width:15vw; height:auto; margin-top: 2vh; cursor: pointer;}
+		.flex > div{ padding:0 2vw;}
+		p{text-align: center;
+			font-family: cabazon, serif;
+			font-weight: 400;
+			font-style: normal;
+			font-size: 3vh;}
+		h1{text-align: center;
+			font-family: cabazon, serif;
+			font-weight: 400;
+			font-style: normal;
+			font-size: 10vh;
+			margin-bottom: 1.8vh;
+			}
+		button{visibility: hidden;}
+
+
+		input[type=range] { -webkit-appearance: none;
+			background-image:url(./slidebar.png);
+			height: 2vh; width:80%; background-size: auto 100% ; padding: 0 10%; margin-top:7vh;}
+		input[type='range']::-webkit-slider-thumb { -webkit-appearance: none; 
+			height: 2vw; width:2vw; border-radius:0.5vw; background:black; filter: drop-shadow(5px 5px 3px gray);}
+		
+
+
+		.flex{display: flex; padding:12vh 0 8vh 0; justify-content: space-between;}
+		.crop{width:15vw; height:18vw; object-fit: cover; border-radius: 5vw;}
+		.h100{height:91vh; background-color:white; background-size: auto 100% ; padding-bottom:20vh;} 
+		.relative{position: relative;}
+		.absolute{position: absolute; display: none;}
+		.arrow1{top:32vh;left:17vw; width:10vw;}
+		.arrow2{top:0vh;left:67vw; width:10vw;}
+		.arrow3{top:13vh;left:75vw; width:8vw;}
+		.arrow4{top:22vh;left:36vw; width:12vw;}
+		.arrow5{top:5vh;left:8vw; width:12vw;}
+		.volume {position: absolute; top:2vh; left:0; width:8vw;}
+		.volume > img :hover { display:inline;}
+		.text{background-color: lightgray; height:80vh;}
+		.text > p {width:60%; font-family: 'Noto Serif KR', serif; font-size: 1rem; margin: auto; padding:5vw; line-height: 2.2rem;}
+	</style>
+</head>
+
+
+<body>
+	<div class="h100">
+		
+		<div class="title">
+	
+		<h1 id="destination">Travel Record</h1>
+		<p class="adress">The sound reminds me of...</p>
+		</div>
+		<div class="relative">
+			
+		
+		<img id="arrow1" class="absolute arrow1" src="./arrow1.png">
+		<img id="arrow2" class="absolute arrow2" src="./arrow2.png">
+		<img id="arrow3" class="absolute arrow3" src="./arrow3.png">
+		<img id="arrow4" class="absolute arrow4" src="./arrow4.png">
+		<img id="arrow5" class="absolute arrow5" src="./arrow5.png">
+			
+		<div class="flex">
+			
+			<div>
+				<img id="Berlin" class="crop" src="./Berlin.jpg";>
+				<audio loop id="Berlinsn" src="./Berlin.mp3"></audio>
+				
+			</div>
+
+			<div>
+				<img id="Munch" class="crop" src="./Munch.jpg";>
+				
+				<audio loop id="Munchsn" src="./Munch.mp3"></audio>
+				
+			</div>
+
+			<div>
+				<img id="Mainz" class="crop" src="./Mainz.jpg";>
+				<audio loop id="Mainzsn" src="./Mainz.mp3"></audio>
+				
+			</div>
+
+			<div>
+				<img id="Museum" class="crop" src="./Museum.jpg";>
+				<audio loop id="Museumsn" src="./Museum.mp3"></audio>
+				
+			</div>
+
+			<div>
+				<img id="Koblenz" class="crop" src="./Koblenz.jpg";>
+				<audio loop id="Koblenzsn" src="./Koblenz.mp3" ></audio>
+				
+			</div>
+		</div>
+	</div>
+		<div class="relative" onmouseenter="show()" onmouseleave="disa()">
+		
+			<p id="address">Destination</p>
+			<img  id="volume"class="volume" src="./volume.png">
+			<input  id="vol" type="range" max="100" min="0" value="50">
+		</div>
+		</div>
+	</div>
+	<div class="text">
+		<p>(여행 관련 글 들어갈 부분...)국가는 노인과 청소년의 복지향상을 위한 정책을 실시할 의무를 진다. 언론·출판에 대한 허가나 검열과 집회·결사에 대한 허가는 인정되지 아니한다. 학교교육 및 평생교육을 포함한 교육제도와 그 운영, 교육재정 및 교원의 지위에 관한 기본적인 사항은 법률로 정한다.
+
+신체장애자 및 질병·노령 기타의 사유로 생활능력이 없는 국민은 법률이 정하는 바에 의하여 국가의 보호를 받는다. 대통령은 제3항과 제4항의 사유를 지체없이 공포하여야 한다.
+
+원장은 국회의 동의를 얻어 대통령이 임명하고, 그 임기는 4년으로 하며, 1차에 한하여 중임할 수 있다. 모든 국민은 근로의 권리를 가진다. 국가는 사회적·경제적 방법으로 근로자의 고용의 증진과 적정임금의 보장에 노력하여야 하며, 법률이 정하는 바에 의하여 최저임금제를 시행하여야 한다.
+
+선거에 있어서 최고득표자가 2인 이상인 때에는 국회의 재적의원 과반수가 출석한 공개회의에서 다수표를 얻은 자를 당선자로 한다. 공무원의 신분과 정치적 중립성은 법률이 정하는 바에 의하여 보장된다.
+
+헌법재판소는 법관의 자격을 가진 9인의 재판관으로 구성하며, 재판관은 대통령이 임명한다. 국가는 과학기술의 혁신과 정보 및 인력의 개발을 통하여 국민경제의 발전에 노력하여야 한다.
+
+이 헌법에 의한 최초의 대통령의 임기는 이 헌법시행일로부터 개시한다. 정부는 회계연도마다 예산안을 편성하여 회계연도 개시 90일전까지 국회에 제출하고, 국회는 회계연도 개시 30일전까지 이를 의결하여야 한다.
+
+대통령이 임시회의 집회를 요구할 때에는 기간과 집회요구의 이유를 명시하여야 한다. 공무원의 직무상 불법행위로 손해를 받은 국민은 법률이 정하는 바에 의하여 국가 또는 공공단체에 정당한 배상을 청구할 수 있다. 이 경우 공무원 자신의 책임은 면제되지 아니한다.
+
+</p>
+	</div>
+
+	<script type="text/javascript">
+		vol.oninput = function() {
+			Berlinsn.volume = vol.value / 100;
+			Munchsn.volume = vol.value / 100;
+			Mainzsn.volume = vol.value / 100;
+			Museumsn.volume = vol.value / 100;
+			Koblenzsn.volume = vol.value / 100;
+		}
+		var state = false;
+		var Stad = document.getElementsByTagName('audio');
+		var Bcon = function(){
+				Berlinsn.pause();
+				Berlinsn.currentTime = 0;
+				Berlin.src = "Berlin.jpg"; 
+				state = true;}
+		var Mucon = function(){
+				Munchsn.pause();
+				Munchsn.currentTime = 0;
+				Munch.src = "Munch.jpg";
+				state = true;}
+		var Macon = function(){
+				Mainzsn.pause();
+				Mainzsn.currentTime = 0;
+				Mainz.src = "Mainz.jpg";
+				state = true;}
+		var Mscon = function(){
+				Museumsn.pause();
+				Museumsn.currentTime = 0;
+				Museum.src = "Museum.jpg";
+				state = true;}
+		var Kcon = function(){
+				Koblenzsn.pause();
+				Koblenzsn.currentTime = 0;
+				Koblenz.src = "Koblenz.jpg";
+				state = true;}
+		var D = function(){document.getElementById("address").innerText = "Destination";}
+		var Hide = function(){document.getElementsByClassName("absolute");}
+
+		var arr = function(){
+			document.getElementById("arrow1").style.display = "none";
+			document.getElementById("arrow2").style.display = "none";
+			document.getElementById("arrow3").style.display = "none";
+			document.getElementById("arrow4").style.display = "none";
+			document.getElementById("arrow5").style.display = "none";
+		}
+		function show(){document.getElementById("volume").style.display = "inline";}
+		function disa(){document.getElementById("volume").style.display = "none";}
+		Berlin.onclick = function(){ 
+			
+			if (state) {
+
+				Mucon();
+				Macon();
+				Mscon();
+				Kcon();
+				Berlinsn.play();
+				Berlin.src = "Berlin_after.jpg";
+				state = false;
+				document.getElementById("destination").innerText = "Berliner Dom";
+				document.getElementById("address").innerText = "Am Lustgarten, 10178 Berlin";
+				document.getElementById("arrow5").style.display = "inline";
+			} else {
+			document.getElementById("arrow5").style.display = "none";
+			Bcon();
+			document.getElementById("destination").innerText = "Travel Record";
+			D();
+			arr();
+			}
+		}
+
+		Munch.onclick = function(){ 
+			
+			if (state) {
+			Bcon();
+			Macon();
+			Mscon();
+			Kcon();
+			Munchsn.play();
+			Munch.src = "Munch_after.jpg";
+			state = false;
+			document.getElementById("destination").innerText = "Marienplatz";
+			document.getElementById("address").innerText = "Marienplatz, 80331 München";
+			document.getElementById("arrow1").style.display = "inline";
+		} else {
+			Mucon();
+			document.getElementById("destination").innerText = "Travel Record";
+			D();
+			arr();}
+		}
+
+		Mainz.onclick = function(){ 
+			if (state) {
+				Mucon();
+				Bcon();
+				Mscon();
+				Kcon();
+				Mainzsn.play();
+				Mainz.src = "Mainz_after.jpg";
+				state = false;
+				document.getElementById("destination").innerText = "Mainzer Dom";
+				document.getElementById("address").innerText = "Markt 10, 55116 Mainz";
+				document.getElementById("arrow4").style.display = "inline";
+			} else {
+				Macon();
+				document.getElementById("destination").innerText = "Travel Record";
+				D();
+				arr();}
+			}
+
+		Museum.onclick = function(){ 
+			var Arrow = document.getElementById("arrow2");
+			if (state) {
+				Mucon();
+				Bcon();
+				Macon();
+				Kcon();
+				Museumsn.play();
+				Museum.src = "Museum_after.jpg";
+				state = false;
+				document.getElementById("destination").innerText = "Martin-Gropius-Bau";
+				document.getElementById("address").innerText = "Niederkirchnerstraße 7, 10963 Berlin";
+				Arrow.style.display = "inline";
+			} else {
+				Mscon();
+				document.getElementById("destination").innerText = "Travel Record";
+				D();
+				arr();}
+			}
+		Koblenz.onclick = function(){ 
+			if (state) {
+				Mucon();
+				Bcon();
+				Macon();
+				Mscon();
+				Koblenzsn.play();
+				Koblenz.src = "Koblenz_after.jpg";
+				state = false;
+				document.getElementById("destination").innerText = "Herz-Jesu-Kirche";
+				document.getElementById("address").innerText = "Löhrrondell 1A, 56068 Koblenz";
+				document.getElementById("arrow3").style.display = "inline";
+			} else {
+				Kcon();
+				document.getElementById("destination").innerText = "Travel Record";
+				D();
+				arr();}
+			};
+	
+	</script>
+</body>
+</html>
