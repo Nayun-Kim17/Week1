@@ -139,33 +139,33 @@
 			Museumsn.volume = vol.value / 100;
 			Koblenzsn.volume = vol.value / 100;
 		}
-		var state = false;
+		var state = "";
 		var Stad = document.getElementsByTagName('audio');
 		var Bcon = function(){
 				Berlinsn.pause();
 				Berlinsn.currentTime = 0;
 				Berlin.src = "Berlin.jpg"; 
-				state = true;}
+				state = "";}
 		var Mucon = function(){
 				Munchsn.pause();
 				Munchsn.currentTime = 0;
 				Munch.src = "Munch.jpg";
-				state = true;}
+				state = "";}
 		var Macon = function(){
 				Mainzsn.pause();
 				Mainzsn.currentTime = 0;
 				Mainz.src = "Mainz.jpg";
-				state = true;}
+				state = "";}
 		var Mscon = function(){
 				Museumsn.pause();
 				Museumsn.currentTime = 0;
 				Museum.src = "Museum.jpg";
-				state = true;}
+				state = "";}
 		var Kcon = function(){
 				Koblenzsn.pause();
 				Koblenzsn.currentTime = 0;
 				Koblenz.src = "Koblenz.jpg";
-				state = true;}
+				state = "";}
 		var D = function(){document.getElementById("address").innerText = "Destination";}
 		var Hide = function(){document.getElementsByClassName("absolute");}
 
@@ -178,104 +178,86 @@
 		}
 		function show(){document.getElementById("volume").style.display = "inline";}
 		function disa(){document.getElementById("volume").style.display = "none";}
+
+		function allStop() {
+			Mucon();
+			Macon();
+			Mscon();
+			Kcon();
+			Bcon();
+			document.getElementById("arrow5").style.display = "none";
+			document.getElementById("destination").innerText = "Travel Record";
+			D();
+			arr();
+		}
+
 		Berlin.onclick = function(){ 
 			
-			if (state) {
+			if (state !=="B") {
 
-				Mucon();
-				Macon();
-				Mscon();
-				Kcon();
+				allStop();
 				Berlinsn.play();
 				Berlin.src = "Berlin_after.jpg";
-				state = false;
+				state = "B";
 				document.getElementById("destination").innerText = "Berliner Dom";
 				document.getElementById("address").innerText = "Am Lustgarten, 10178 Berlin";
 				document.getElementById("arrow5").style.display = "inline";
 			} else {
-			document.getElementById("arrow5").style.display = "none";
-			Bcon();
-			document.getElementById("destination").innerText = "Travel Record";
-			D();
-			arr();
+			allStop();
 			}
 		}
 
 		Munch.onclick = function(){ 
 			
-			if (state) {
-			Bcon();
-			Macon();
-			Mscon();
-			Kcon();
+			if (state !=="Mu") {
+			allStop();
 			Munchsn.play();
 			Munch.src = "Munch_after.jpg";
-			state = false;
+			state = "Mu";
 			document.getElementById("destination").innerText = "Marienplatz";
 			document.getElementById("address").innerText = "Marienplatz, 80331 München";
 			document.getElementById("arrow1").style.display = "inline";
 		} else {
-			Mucon();
-			document.getElementById("destination").innerText = "Travel Record";
-			D();
-			arr();}
+			allStop();}
 		}
 
 		Mainz.onclick = function(){ 
-			if (state) {
-				Mucon();
-				Bcon();
-				Mscon();
-				Kcon();
+			if (state !=="Ma") {
+				allStop();
 				Mainzsn.play();
 				Mainz.src = "Mainz_after.jpg";
-				state = false;
+				state = "Ma";
 				document.getElementById("destination").innerText = "Mainzer Dom";
 				document.getElementById("address").innerText = "Markt 10, 55116 Mainz";
 				document.getElementById("arrow4").style.display = "inline";
 			} else {
-				Macon();
-				document.getElementById("destination").innerText = "Travel Record";
-				D();
-				arr();}
+				allStop();}
 			}
 
 		Museum.onclick = function(){ 
 			var Arrow = document.getElementById("arrow2");
-			if (state) {
-				Mucon();
-				Bcon();
-				Macon();
-				Kcon();
+			if (state !=="Ms") {
+				allStop();
 				Museumsn.play();
 				Museum.src = "Museum_after.jpg";
-				state = false;
+				state = "Ms";
 				document.getElementById("destination").innerText = "Martin-Gropius-Bau";
 				document.getElementById("address").innerText = "Niederkirchnerstraße 7, 10963 Berlin";
 				Arrow.style.display = "inline";
 			} else {
-				Mscon();
-				document.getElementById("destination").innerText = "Travel Record";
-				D();
-				arr();}
+				allStop();}
 			}
 		Koblenz.onclick = function(){ 
-			if (state) {
-				Mucon();
-				Bcon();
-				Macon();
-				Mscon();
+			if (state !=="K") {
+				allStop();
 				Koblenzsn.play();
 				Koblenz.src = "Koblenz_after.jpg";
-				state = false;
+				state = "K";
 				document.getElementById("destination").innerText = "Herz-Jesu-Kirche";
 				document.getElementById("address").innerText = "Löhrrondell 1A, 56068 Koblenz";
 				document.getElementById("arrow3").style.display = "inline";
 			} else {
-				Kcon();
-				document.getElementById("destination").innerText = "Travel Record";
-				D();
-				arr();}
+				allStop();}
 			};
 	
 	</script>
